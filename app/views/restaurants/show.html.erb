@@ -1,0 +1,16 @@
+<h1>Restaurants#show</h1>
+<p>Find me in app/views/restaurants/show.html.erb</p>
+
+<p class="m-2"><%= @restaurant.name %></p>
+<p class="m-2"><%= @restaurant.address %></p>
+<p class="m-2"><%= @restaurant.category %></p>
+
+<h1>Reviews</h1>
+<div class="d-inline-flex w-50 p-1 m-2">
+  <% @reviews.each do |review| %>
+  <p class="m-2"><%= review.content %></p>
+  <p class="m-2"><%= review.rating %></p>
+  <% end %>
+</div>
+<p class="m-2"><%= link_to 'Review this restaurant', new_restaurant_review_path(@restaurant) %></p>
+<p class="m-2"><%= link_to 'Back to list of restaurants', restaurants_path %></p>

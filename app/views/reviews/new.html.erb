@@ -1,0 +1,15 @@
+<h1>#new Review</h1>
+
+<div class="d-inline-flex w-50 p-1">
+<p class="m-2"><%= @restaurant.name %></p>
+<p class="m-2"><%= @restaurant.address %></p>
+<p class="m-2"><%= @restaurant.category %></p>
+</div>
+
+<%= simple_form_for [@restaurant, @review] do |review| %>
+  <%= review.input :content %>
+  <%= review.input :rating, input_html: { min: 0, max: 5 } %>
+  <%= review.button :submit %>
+<% end %>
+
+<p class="m-2"><%= link_to 'Back to restaurant', restaurant_path(@restaurant) %></p>

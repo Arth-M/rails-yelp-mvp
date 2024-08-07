@@ -1,0 +1,15 @@
+<h1>Restaurants#index</h1>
+<p>Find me in app/views/restaurants/index.html.erb</p>
+
+<% @restaurants.each do |restaurant| %>
+<div class="d-inline-flex w-50 p-1">
+<p class="m-2"><%= restaurant.name %></p>
+<p class="m-2"><%= restaurant.address %></p>
+<p class="m-2"><%= restaurant.category %></p>
+<p class="m-2"><%= link_to 'Show this restaurant', restaurant_path(restaurant) %></p>
+<p class="m-2"><%= link_to 'Review this restaurant', new_restaurant_review_path(restaurant) %></p>
+</div>
+ <%# <%= '*' * 60 %> <%#%>
+<% end %>
+
+<p><%= link_to 'Add a new restaurant', new_restaurant_path %></p>
